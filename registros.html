@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <!-- Apartado de sesión en la esquina superior derecha -->
+    <div id="sessionInfo" class="session-info">
+        <span id="usernameDisplay"></span>
+        <button onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+    
+
+    <div class="container mt-5">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal">
+            Nuevo Usuario
+        </button>
+        <table class="table mt-3">
+            <thead class="thead-light">
+                <tr>
+                    <th>Cedula</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Dirección</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Funciones</th>
+                </tr>
+            </thead>
+            <tbody id="userTable">
+                <!-- Las filas de usuarios se agregarán dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para agregar un nuevo usuario -->
+    <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userModalLabel">Nuevo Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="limpiarFormulario()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="userForm">
+                        <div class="form-group">
+                            <label for="nroUsuario">Cedula:</label>
+                            <input type="text" class="form-control" id="nroUsuario" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" class="form-control" id="apellido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" class="form-control" id="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo:</label>
+                            <input type="email" class="form-control" id="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">Dirección:</label>
+                            <input type="text" class="form-control" id="direccion" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                            <input type="date" class="form-control" id="fechaNacimiento" required>
+                        </div>
+                        <button type="button" id="saveButton" class="btn btn-primary" onclick="gestionarUsuario()">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="limpiarFormulario()">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver detalles de un usuario -->
+    <div class="modal fade" id="viewUserModal" tabindex="-1" aria-labelledby="viewUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewUserModalLabel">Detalles del Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="cerrarVistaDetalles()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="viewUserForm">
+                        <div class="form-group">
+                            <label for="viewNroUsuario">Cedula:</label>
+                            <input type="text" class="form-control" id="viewNroUsuario" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="viewNombre">Nombre:</label>
+                            <input type="text" class="form-control" id="viewNombre" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="viewApellido">Apellido:</label>
+                            <input type="text" class="form-control" id="viewApellido" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="viewTelefono">Teléfono:</label>
+                            <input type="tel" class="form-control" id="viewTelefono" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="viewCorreo">Correo:</label>
+                            <input type="email" class="form-control" id="viewCorreo" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="viewDireccion">Dirección:</label>
+                            <input type="text" class="form-control" id="viewDireccion" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="viewFechaNacimiento">Fecha de Nacimiento:</label>
+                            <input type="date" class="form-control" id="viewFechaNacimiento" disabled>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cerrarVistaDetalles()">Cerrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./js/registroFinal.js"></script>
+</body>
+</html>

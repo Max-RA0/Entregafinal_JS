@@ -1,0 +1,235 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #f0f4f8;
+    min-height: 100vh;
+    padding-top: 50px; /* Ajusta para espacio en la parte superior */
+}
+
+/* Contenedor principal */
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 50px; /* Espacio adicional para que no esté pegado a la parte superior */
+    text-align: center;
+}
+
+/* Títulos de la página */
+h5, h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f9fafb;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Alineación de los botones en la tabla */
+.table .btn-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.table .btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.table .btn-info {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.table .btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.table .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.table .btn:hover {
+    transform: translateY(-2px);
+}
+
+.table .btn-info:hover {
+    background-color: #0056b3;
+}
+
+.table .btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.table .btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Estilo de los formularios dentro del modal */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botones comunes */
+button, .btn {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover, .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Botón de cancelar con estilo diferenciado */
+button.btn-secondary, .btn-secondary {
+    background-color: #6c757d;
+}
+
+button.btn-secondary:hover, .btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Modal para agregar un nuevo usuario */
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.modal-header .close {
+    color: white;
+}
+
+.modal-body {
+    padding: 30px;
+    font-size: 14px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+/* Animaciones para modales */
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.modal.fade.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Estilo general para los inputs deshabilitados */
+input[disabled] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* Estilo para la sesión en la esquina superior derecha */
+.session-info {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.session-info button {
+    background-color: #dc3545;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.session-info button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Estilo de la barra de carga (si es necesario) */
+.loading-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #007bff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}

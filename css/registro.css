@@ -1,0 +1,138 @@
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Estilo del contenedor de login */
+.registro-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.registro-container:hover {
+    transform: translateY(-10px);
+}
+
+/* Estilo de los campos de entrada */
+.registro-container input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #555;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.registro-container input:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Estilo de los botones */
+.registro-container button {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.registro-container button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Estilo para el enlace de registro */
+.login-link {
+    margin-top: 20px;
+}
+
+.login-link p {
+    font-size: 14px;
+    color: #777;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #0056b3;
+}
+
+/* Estilos de animación de entrada */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Añadiendo animación de entrada */
+.registro-container {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Estilo de borde y sombra de enfoque */
+.registro-container input:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Fondo suave de la página */
+body {
+    background-color: #f4f7fb;
+}
+
+/* Media queries para mejorar la responsividad */
+@media (max-width: 480px) {
+    .registro-container {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .registro-container button {
+        font-size: 14px;
+    }
+}
