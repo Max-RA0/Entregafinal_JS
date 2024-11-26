@@ -168,5 +168,5 @@ function cerrarSesion() {
     localStorage.removeItem("usuarioLogueado");
 
     // Redirigir al login
-    window.location.href = "./inicio_sesion.html"; // Cambiar a la página deseada
+    window.location.href = "./index.html"; // Cambiar a la página deseada
 }

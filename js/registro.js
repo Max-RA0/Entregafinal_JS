@@ -28,5 +28,5 @@ function RegistroUsuario() {
     localStorage.setItem(usuario, JSON.stringify(user));
 
     // Redirigir al inicio de sesión después del registro
-    window.location.href = './inicio_sesion.html'; // Redirige al login
+    window.location.href = './index.html'; // Redirige al login
 }
