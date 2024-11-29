@@ -13,16 +13,26 @@
         <span id="usernameDisplay"></span>
         <button onclick="cerrarSesion()">Cerrar Sesión</button>
     </div>
-    
 
     <div class="container mt-5">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal">
-            Nuevo Usuario
-        </button>
+        <!-- Botón para agregar un nuevo usuario -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal">
+                Nuevo Usuario
+            </button>
+            <!-- Campo de búsqueda -->
+            <input 
+                type="text" 
+                id="buscador" 
+                class="form-control" 
+                placeholder="Buscar por cédula, nombre, apellido o correo">
+        </div>
+
+        <!-- Tabla de usuarios -->
         <table class="table mt-3">
             <thead class="thead-light">
                 <tr>
-                    <th>Cedula</th>
+                    <th>Cédula</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Teléfono</th>
@@ -51,7 +61,7 @@
                 <div class="modal-body">
                     <form id="userForm">
                         <div class="form-group">
-                            <label for="nroUsuario">Cedula:</label>
+                            <label for="nroUsuario">Cédula:</label>
                             <input type="text" class="form-control" id="nroUsuario" required>
                         </div>
                         <div class="form-group">
@@ -99,7 +109,7 @@
                 <div class="modal-body">
                     <form id="viewUserForm">
                         <div class="form-group">
-                            <label for="viewNroUsuario">Cedula:</label>
+                            <label for="viewNroUsuario">Cédula:</label>
                             <input type="text" class="form-control" id="viewNroUsuario" disabled>
                         </div>
                         <div class="form-group">

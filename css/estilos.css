@@ -31,6 +31,30 @@ h5, h2 {
     font-weight: bold;
 }
 
+/* Estilo para el campo de búsqueda */
+#buscador {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#buscador:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+#buscador::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
 /* Estilo de la tabla */
 table {
     width: 100%;
@@ -232,4 +256,4 @@ input[disabled] {
     top: 0;
     left: 0;
     z-index: 9999;
-}
+} 
